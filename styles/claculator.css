@@ -1,0 +1,71 @@
+:root {
+  --mainWidth: 9rem;
+  --mainTop: 1rem;
+
+  --displayHeight: 1.6rem;
+  --displayPaddingTopBottom: 0;
+  --displayPaddingLeftRight: 0.2rem;
+
+  --keyboardTop: 1rem;
+  --keyboardBottom: 1rem;
+
+  --keyWidith: 1.5rem;
+  --keyHeight: 1.5rem;
+  --keyGap: 0.3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+#containerMain {
+  margin: var(--mainTop);
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--mainWidth);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#containerDisplay {
+  height: var(--displayHeight);
+  background-color: cadetblue;
+  color: white;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: var(--displayPaddingTopBottom) var(--displayPaddingLeftRight);
+}
+
+#containerKeyboard {
+  margin-top: var(--keyboardTop);
+  margin-bottom: var(--keyboardBottom);
+  display: grid;
+  grid-template-rows: repeat(5, var(--keyWidith));
+  grid-template-columns: repeat(4, var(--keyHeight));
+  justify-content: space-around;
+  gap: var(--keyGap);
+}
+
+#containerKeyboard > button {
+  border-radius: 50%;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  border: none;
+}
+
+#containerKeyboard > button.operator {
+  color: lawngreen;
+}
+
+#containerKeyboard > button#clear {
+  color: red;
+}
+
+#containerKeyboard > button#equals {
+  background-color: red;
+}
