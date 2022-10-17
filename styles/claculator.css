@@ -1,17 +1,19 @@
 :root {
-  --mainWidth: 9rem;
-  --mainTop: 1rem;
+  --scale: 2;
+  --mainWidth: calc(var(--scale) * 9rem);
+  --mainTop: calc(var(--scale) * 2rem);
 
-  --displayHeight: 1.6rem;
+  --displayHeight: calc(var(--scale) * 1.6rem);
   --displayPaddingTopBottom: 0;
-  --displayPaddingLeftRight: 0.2rem;
+  --displayPaddingLeftRight: calc(var(--scale) * 0.4rem);
 
-  --keyboardTop: 1rem;
-  --keyboardBottom: 1rem;
+  --keyboardTop: calc(var(--scale) * 1rem);
+  --keyboardBottom: calc(var(--scale) * 1rem);
 
-  --keyWidith: 1.5rem;
-  --keyHeight: 1.5rem;
-  --keyGap: 0.3rem;
+  --keyWidith: calc(var(--scale) * 1.5rem);
+  --keyHeight: calc(var(--scale) * 1.5rem);
+  --keyGap: calc(var(--scale) * 0.3rem);
+  --keyFontSize: calc(var(--scale) * 1rem);
 }
 
 * {
@@ -28,7 +30,6 @@
   flex-direction: column;
   justify-content: center;
   background-color: black;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 #containerDisplay {
@@ -38,7 +39,9 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: var(--displayPaddingTopBottom) var(--displayPaddingLeftRight);
+  padding: var(--displayPaddingTopBottom) var(--displayPaddingLeftRight) var(--displayPaddingTopBottom) var(--displayPaddingLeftRight);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--keyFontSize);
 }
 
 #containerKeyboard {
@@ -56,6 +59,8 @@
   background-color: rgb(59, 59, 59);
   color: white;
   border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--keyFontSize);
 }
 
 #containerKeyboard > button.operator {

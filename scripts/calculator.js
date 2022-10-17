@@ -17,6 +17,9 @@ function setDisplay(displayVal) {
 
 function handleKey(key) {
   if (arrDigitsAndDot.includes(key.innerText)) {
+    /*
+      - Impedir a entrada de mais do que 'displayLen' dígitos
+    */
     if (currentDisplay.innerText === "0" || memory == display) {
       setDisplay(key.innerText);
     } else {
